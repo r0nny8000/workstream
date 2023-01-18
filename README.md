@@ -8,7 +8,7 @@ Getting started
 ---------------
 Checkout this project and use [Poetry](https://python-poetry.org).
 
-Install dependencies
+Install dependencies first
 
     poetry install
 
@@ -26,6 +26,12 @@ Install a new module
     poetry add <module>
     poetry add -D pylint
 
+Build and Install locally
+
+    poetry build
+    pip install dist/workstream-0.1.0.tar.gz
+
+Execute command with ws
 Config VSCodium
 ---------------
 
