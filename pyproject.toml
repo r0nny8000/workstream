@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "workstream"
 version = "0.1.0"
-description = "workstreams"
+description = "organize workstreams"
 authors = ["r0nny8000 <r0nny8000@bea2b.de>"]
 license = "GPL-3.0-only"
 readme = "README.md"
