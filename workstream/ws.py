@@ -1,13 +1,13 @@
 import fire
+from workstream import createFolder
 
-def hello(name):
-    print("hello function")
-    print("Hi " + name)
+def create(name):
+    print("creating a new workstream with the name " + name + "...")
+    createFolder(name)
+    print("done.")
 
 def _main():
-    print("main function")
     fire.Fire()
 
 if __name__ == '__main__':
-    print("name main")
     _main()
