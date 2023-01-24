@@ -3,13 +3,14 @@ import os
 
 from workstream import createWorkstreamFolder
 from workstream import createSymLink
+from workstream import createReadme
 
-HOME = os.path.expanduser('~/Documents')
+WORKSTREAMS = os.path.expanduser('~/Documents')
 LINKS = os.path.expanduser('~/Desktop')
 
 def create(name):
     print("Prechecks...")
-    if not os.path.exists(HOME):
+    if not os.path.exists(WORKSTREAMS):
         print("Folder for workstreams does not exist.")
         return
 
@@ -20,8 +21,9 @@ def create(name):
     print("done.")
 
     print("Creating a new workstream with the name " + name + "...")
-    createWorkstreamFolder(HOME, name)
-    createSymLink(HOME, LINKS, name)
+    createWorkstreamFolder(WORKSTREAMS, name)
+    createSymLink(WORKSTREAMS, LINKS, name)
+    createReadme(WORKSTREAMS, name)
     print("done.")
 
 def _main():

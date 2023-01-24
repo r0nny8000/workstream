@@ -3,17 +3,19 @@ import os
 
 
 
-def createWorkstreamFolder(home, name):
-    workstream_folder = home  + '/' + name
-    if os.path.exists(workstream_folder):
+def createWorkstreamFolder(workstreams, name):
+    if os.path.exists(workstreams  + '/' + name):
         print("Workstram folder already exists.")
     else:
-        os.mkdir(workstream_folder)
+        os.mkdir(workstreams  + '/' + name)
 
 
-def createSymLink(home, links, name):
+def createSymLink(workstreams, links, name):
     if os.path.islink(links + '/' + name):
         print("Link already exists.")
     else:
-        os.symlink(home + '/' + name, links + '/' + name)
+        os.symlink(workstreams + '/' + name, links + '/' + name)
     
+
+def createReadme(workstreams, name):
+    return
