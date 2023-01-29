@@ -1,9 +1,7 @@
 import fire
 import os
 
-from workstream import createWorkstreamFolder
-from workstream import createSymLink
-from workstream import createReadme
+from workstream import create as c
 
 WORKSTREAMS = os.path.expanduser('~/Documents')
 LINKS = os.path.expanduser('~/Desktop')
@@ -21,9 +19,9 @@ def create(name):
     print("done.")
 
     print("Creating a new workstream with the name " + name + "...")
-    createWorkstreamFolder(WORKSTREAMS, name)
-    createSymLink(WORKSTREAMS, LINKS, name)
-    createReadme(WORKSTREAMS, name)
+    c.createWorkstreamFolder(WORKSTREAMS, name)
+    c.createSymLink(WORKSTREAMS, LINKS, name)
+    c.createReadme(WORKSTREAMS, name)
     print("done.")
 
 def _main():
