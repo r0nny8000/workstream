@@ -4,17 +4,17 @@ import os
 
 
 def createWorkstreamFolder(workstreams, name):
-    if os.path.exists(workstreams  + '/' + name):
-        print("Workstram folder already exists.")
-    else:
+    try:
         os.mkdir(workstreams  + '/' + name)
+    except FileExistsError:
+        print("Workstram folder exists.")
 
 
 def createSymLink(workstreams, links, name):
-    if os.path.islink(links + '/' + name):
-        print("Link already exists.")
-    else:
+    try:
         os.symlink(workstreams + '/' + name, links + '/' + name)
+    except FileExistsError:
+        print("Link exists.")
 
 
 def createReadme(workstreams, name):
@@ -28,5 +28,5 @@ def createReadme(workstreams, name):
     except FileNotFoundError:
         print("Folder " + workstreams + '/' + name + " does not exist.")
     except FileExistsError:
-        print("Readme file already exists.")
+        print("Readme file exists.")
     
