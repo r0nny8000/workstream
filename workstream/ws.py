@@ -3,10 +3,16 @@ import os
 
 from workstream import create as c
 
-WORKSTREAMS = os.path.expanduser('~/Documents')
-LINKS = os.path.expanduser('~/Desktop')
+WORKSTREAMS = os.path.expanduser(os.getenv('WORKSTREAMS','~/Documents'))
+LINKS = os.path.expanduser(os.getenv('LINKS','~/Desktop'))
+
+def env():
+    '''Shows the current environment variables used by this program.'''
+    print("WORKSTREAMS: " + WORKSTREAMS)
+    print("LINKS: " + LINKS)
 
 def create(name):
+    '''Creates a new Workstream.'''
     print("Prechecks...")
     if not os.path.exists(WORKSTREAMS):
         print("Folder for workstreams does not exist.")
