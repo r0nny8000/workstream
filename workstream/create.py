@@ -19,7 +19,7 @@ def createSymLink(workstreams, links, name):
 
 def createReadme(workstreams, name):
     try:
-        with open(workstreams + '/' + name + '/README.markdown', 'x', encoding="utf-8") as readme:
+        with open(workstreams + '/' + name + '/README.md', 'x', encoding="utf-8") as readme:
             readme.write(name)
             underline = '\n'
             for n in name:
